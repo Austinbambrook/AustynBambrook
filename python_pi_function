@@ -1,0 +1,23 @@
+import math
+
+def denom_exp(iters):
+   for i in range(0, iters):
+     exp = 3^iters
+     return exp
+
+def base_denom(iters):
+   for i in range(0, iters):
+     denom = 1 + 2*iters
+     return denom
+
+def myPi(iters):
+   sign = 1
+   pi = 0
+   for i in range(0, iters):
+      pi = pi + sign*(1/((base_denom(iters))*denom_exp(iters)))
+      sign = -1 * sign
+   pi = (math.sqrt(12))*pi
+   return pi
+
+thisisit = myPi(10000)
+print(thisisit)
